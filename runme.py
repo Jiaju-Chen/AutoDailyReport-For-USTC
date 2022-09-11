@@ -2,9 +2,9 @@ import argparse
 from Report import *
 
 report_data = [
-    ("juzhudi", "中校区"),  # 居住地
-    ("dorm_building", "z2"),  # 宿舍楼
-    ("dorm", "414"),  # 宿舍号
+    ("juzhudi", "高新校区"),  # 居住地
+    ("dorm_building", "6"),  # 宿舍楼
+    ("dorm", "808"),  # 宿舍号
     ("body_condition", "1"),  # 身体状况 1为正常
     ("body_condition_detail", ""),  # 身体状况详细 正常无需
     ("now_status", "1"),  # 当前状态 1为正常在校园内
@@ -15,9 +15,9 @@ report_data = [
     ("last_touch_sars_detail", ""),  # 具体情况
     ("is_danger", "0"),  # 当前居住地是否为疫情中高风险地区 0为否
     ("is_goto_danger", "0"),  # 14天内是否有疫情中高风险地区旅居史 0为否
-    ("jinji_lxr", "cyzkrau"),  # 紧急联系人
+    ("jinji_lxr", "JiajuChen"),  # 紧急联系人
     ("jinji_guanxi", "self"),  # 与本人关系
-    ("jiji_mobile", "18701375065"),  # 紧急联系人电话
+    ("jiji_mobile", "18015675685"),  # 紧急联系人电话
     ("other_detail", ""),  # 其他情况说明
 ]
 cross_campus_data = [
@@ -49,7 +49,7 @@ if __name__ == "__main__":
             print("NOW STATE " + state)
             exit(0)
         work = autorepoter.report(report_data) & autorepoter.upload_code()
-        work = work & autorepoter.cross_campus(cross_campus_data)
+        # work = work & autorepoter.cross_campus(cross_campus_data)
         work = work & autorepoter.out_school(out_school_data)
         # if nextday in croos_campus_dates:
         #     work = work & autorepoter.apply_cross_campus(cross_campus_data)
