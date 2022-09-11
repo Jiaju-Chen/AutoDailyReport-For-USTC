@@ -68,4 +68,3 @@ python runme.py [STUID] [PASSWORD]
 ```shell
 python runme.py "PB19890604" "FREEDOM"
 ```
-
